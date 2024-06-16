@@ -1,15 +1,31 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        ArrayList<User> users = new ArrayList<>();
+        populateUsers(users);
+        displayUsers(users);
+    }
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    public static void populateUsers(ArrayList<User> users){
+        users.add(new User("Jerick Royce", "Delcoro", "Cumayas"));
+        users.add(new User("Charles Christian", "Delcoro", "Cumayas"));
+        users.add(new User("Princess Ericka", "Delcoro", "Cumayas"));
+    }
+
+    public static void displayUsers(ArrayList<User> users){
+
+        if (users.size() == 0){
+            System.out.println("Users empty.");
+        }
+
+        for (int i = 0; i < users.size(); i++){
+            User user = users.get(i);
+            System.out.println("User " + i);
+            System.out.println("First Name :" + user.getFirstName());
+            System.out.println("Middle Name :" + user.getMiddleName());
+            System.out.println("Last Name :" + user.getLastName());
+            System.out.println();
         }
     }
 }
