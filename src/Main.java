@@ -15,7 +15,7 @@ public class Main {
 
     public static void displayUsers(ArrayList<User> users){
 
-        if (users.size() == 0){
+        if (users.isEmpty()){
             System.out.println("Users empty.");
         }
 
